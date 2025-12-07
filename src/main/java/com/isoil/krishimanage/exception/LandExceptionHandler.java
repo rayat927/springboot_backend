@@ -5,19 +5,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.isoil.krishimanage.model.Land;
+
+
 @ControllerAdvice
-public class Land {
+public class LandExceptionHandler {
 
     @ExceptionHandler(value = {LandNotFoundException.class})
     public ResponseEntity<Object> hand
-            (CloudVendorNotFoundException cloudVendorNotFoundException)
+            (LandNotFoundException landNotFoundException)
     {
-        CloudVendorException cloudVendorException = new CloudVendorException(
-                cloudVendorNotFoundException.getMessage(),
-                cloudVendorNotFoundException.getCause(),
+        LandException landException = new LandException(
+                landNotFoundException.getMessage(),
+                landNotFoundException.getCause(),
                 HttpStatus.NOT_FOUND
         );
 
-        return new ResponseEntity<>(cloudVendorException, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(landException, HttpStatus.NOT_FOUND);
     }
 }

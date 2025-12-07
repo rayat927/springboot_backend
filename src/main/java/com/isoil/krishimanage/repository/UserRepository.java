@@ -2,6 +2,7 @@ package com.isoil.krishimanage.repository;
 
 import com.isoil.krishimanage.model.User;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,4 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findById(Number id);
     Optional<User> findByEmail(String email);
+    User findByUserCode(String userCode);
+    List<User> findByRole(String role);
 }

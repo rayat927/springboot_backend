@@ -1,5 +1,6 @@
 package com.isoil.krishimanage.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,6 +23,9 @@ public class Land {
     private Long userId;
     private String soilType;
     private String landType;
+    private String crop;
+    private String deviceId;
+    private String recommendation;
 
 
     public Long getId() {
@@ -103,6 +107,22 @@ public class Land {
 
     public void setLandType(String landType) {
         this.landType = landType;
+    }
+
+    public String getCrop() {
+        return crop;
+    }
+
+    public void setCrop(String crop) {
+        this.crop = crop;
+    }
+
+    public String getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
     

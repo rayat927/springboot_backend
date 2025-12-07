@@ -14,19 +14,19 @@ public class LandServiceImpl implements LandService {
     }
     
     @Override
-    public Land createLand(Land land) {
+    public String createLand(Land land) {
          landRepository.save(land);
             return "Land created successfully";
     }
 
     @Override
-    public Land updateLand(Land land) {
+    public String updateLand(Land land) {
         landRepository.save(land);
             return "Land updated successfully";
     }
 
     @Override
-    public Land deleteLand(Long id) {
+    public String deleteLand(Long id) {
         landRepository.deleteById(id);
             return "Land deleted successfully";
     }
